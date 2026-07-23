@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Ilma - Numbered Alphabetical References</title>
+    <title-short>Ilma Numbered</title-short>
+    <id>http://www.zotero.org/styles/ilma-numbered-alphabetical</id>
+    <link href="http://www.zotero.org/styles/ilma-numbered-alphabetical" rel="self"/>
+    <updated>2026-07-23T00:00:00+00:00</updated>
+  </info>
+
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography et-al-min="4" et-al-use-first="1" second-field-align="flush" entry-spacing="0" line-spacing="1">
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="] "/>
+      <names variable="author">
+        <name name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter=", " and="text"/>
+        <et-al font-style="italic">et al.</et-al>
+      </names>
+      <date variable="issued" prefix=" (" suffix=").">
+        <date-part name="year"/>
+      </date>
+      <text variable="title" prefix=" " suffix="."/>
+      <choose>
+        <if type="article-journal" match="any">
+          <group prefix=" " delimiter=", ">
+            <text variable="container-title" font-style="italic"/>
+            <text variable="volume"/>
+            <text variable="issue" prefix="(" suffix=")"/>
+            <text variable="page"/>
+          </group>
+        </if>
+        <else-if type="thesis" match="any">
+          <group prefix=" " delimiter=", ">
+            <text variable="genre"/>
+            <text variable="publisher-place"/>
+          </group>
+        </else-if>
+        <else>
+          <text variable="publisher-place" prefix=" " suffix="."/>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
